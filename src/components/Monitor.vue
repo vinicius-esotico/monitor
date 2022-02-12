@@ -21,7 +21,7 @@ export default {
       error: '',
       config: {
         method: 'POST',
-        url: 'https://api.uptimerobot.com/v2/getMonitors',
+        url: 'https://api.uptimerobot.com/v2/getMonitors/',
         headers: { 
           'cache-control': 'no-cache',
           'content-type': 'application/x-www-form-urlencoded' 

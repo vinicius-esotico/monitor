@@ -1,17 +1,23 @@
 <template>
   <div id="app">
+    <Header />
     <Main />
+    <Footer />
   </div>
 </template>
 
 <script>
 
 import Main from './main/Main'
+import Header from './main/Header'
+import Footer from './main/Footer'
 
 export default {
   name: 'App',
   components: { 
-    Main
+    Main,
+    Header,
+    Footer
    }
 }
 </script>
