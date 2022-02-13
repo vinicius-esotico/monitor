@@ -19,11 +19,14 @@ export default {
     return {
       data: null,
       error: '',
+      resp: '',
       config: {
-        method: 'POST',
-        url: 'https://api.uptimerobot.com/v2/getMonitors/',
+        method: 'GET',
+        withCredentials: false,
+        baseURL: 'http://api.uptimerobot.com/v2',
         headers: { 
           'cache-control': 'no-cache',
+          'Access-Control-Allow-Origin': '*',
           'content-type': 'application/x-www-form-urlencoded' 
           },
         form: { 
@@ -33,13 +36,14 @@ export default {
     }
 },
   mounted() {
-    axios.get(this.config)
-          .then(response => {
-            this.data = response
+      axios.get('/getMonitors', this.config)
+          .then(resp => {
+            this.data = resp
           }).catch(error => {
             this.error = error
           })
-  }
+
+    }
 }
 </script>
 
@@ -52,8 +56,6 @@ h1 {
 .monitor {
   width: 100%;
   height: fit-content;
-  background-color: #ccc;
-
 }
 
 </style>

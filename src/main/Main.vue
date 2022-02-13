@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <Monitor 
-    apiKey="u1615701-5e5dece8faf97842b13d211f"
+    apiKey="ur1615701-d183bc4f26c1d1195e6b0340"
     title="Monitor Esotico.com.br"
     />
   </div>
