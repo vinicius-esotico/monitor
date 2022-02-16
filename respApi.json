@@ -1,0 +1,54 @@
+{
+  "data": {
+    "stat": "ok",
+    "pagination": {
+      "offset": 0,
+      "limit": 50,
+      "total": 1
+    },
+    "monitors": [{
+      "id": 790572787,
+      "friendly_name": "Esotico",
+      "url": "https://esotico.com.br/",
+      "type": 1,
+      "sub_type": "",
+      "keyword_type": null,
+      "keyword_case_type": null,
+      "keyword_value": "",
+      "http_username": "",
+      "http_password": "",
+      "port": "",
+      "interval": 300,
+      "timeout": 30,
+      "status": 2,
+      "create_datetime": 1644173875
+    }]
+  },
+  "status": 200,
+  "statusText": "",
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "config": {
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    },
+    "transformRequest": [null],
+    "transformResponse": [null],
+    "timeout": 0,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/json"
+    },
+    "method": "post",
+    "url": "https://api.uptimerobot.com/v2/getMonitors?api_key=ur1615701-d183bc4f26c1d1195e6b0340",
+    "data": "{\"cache-control\":\"no-cache\",\"content-type\":\"application/x-www-form-urlencoded\"}"
+  },
+  "request": {}
+}
