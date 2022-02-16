@@ -1,15 +1,15 @@
 <template>
   <div class="monitor">
     <h1>{{ title }}</h1>
-      <div v-for="monitor in sites" class="monitor-row"> 
+      <div v-for="monitor in sites" :key="monitor.id" class="monitor-row"> 
         <div class="name">
           <span>{{ monitor.friendly_name }}</span>
         </div>
         <div class="url">
-          <span>{{ sites[0].url }}</span>
+          <a>{{ monitor.url }}</a>
         </div>
         <div class="status">
-          <span>{{ status(sites[0].status) }}</span>
+          <span>{{ status(monitor.status) }}</span>
         </div>
       </div>
     <p>{{ error }}</p>
@@ -43,7 +43,7 @@ export default {
           this.error = error
         })
 
-        this.status = function status(i) {
+        this.status = i => {
           switch(i) {
             case 0:
               return 'paused'

@@ -4,6 +4,10 @@
     apiKey="ur1615701-d183bc4f26c1d1195e6b0340"
     title="Monitor Esotico.com.br"
     />
+    <Monitor 
+    apiKey="ur589369-a2a47145b05620158e902ad7"
+    title="Monitor HostHP"
+    />
   </div>
 </template>
 
@@ -22,5 +26,6 @@ export default {
 .main {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 </style>
