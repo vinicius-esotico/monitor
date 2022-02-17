@@ -1,15 +1,20 @@
 <template>
   <div class="monitor">
     <h1>{{ title }}</h1>
-      <div v-for="monitor in sites" :key="monitor.id" class="monitor-row"> 
-        <div class="name">
-          <span>{{ monitor.friendly_name }}</span>
-        </div>
-        <div class="url">
-          <a>{{ monitor.url }}</a>
-        </div>
-        <div class="status">
-          <span>{{ status(monitor.status) }}</span>
+      <div 
+      v-for="monitor in sites" 
+      :key="monitor.id" 
+      class="monitor-row"> 
+        <div v-bind:class="monitor.status = 2 ? off : on ">
+          <div class="name">
+              <span>{{ monitor.friendly_name }}</span>
+            </div>
+            <div class="url">
+              <a v-bind:href="monitor.url">{{ monitor.url }}</a>
+            </div>
+            <!-- <div class="status">
+              <span>{{ status(monitor.status) }}</span>
+            </div> -->
         </div>
       </div>
     <p>{{ error }}</p>
@@ -27,9 +32,11 @@ export default {
   },data: function () {
     return {
       status: null,
+      isUp: null,
       sites: [],
       error: '',
-      resp: '',
+      off: 'off',
+      on: 'on',
         headers: { 
           'cache-control': 'no-cache',
           'content-type': 'application/x-www-form-urlencoded' 
@@ -76,8 +83,19 @@ h1 {
 .monitor-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding: 10px;
 }
 
+.name, .url, .status {
+  padding-right: 25px;
+}
+
+.off {
+  background-color: red;
+}
+
+.on {
+  background-color: green;
+}
 </style>
