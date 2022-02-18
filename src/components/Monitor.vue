@@ -5,18 +5,18 @@
       v-for="monitor in sites" 
       :key="monitor.id" 
       class="monitor-row"> 
-        <div v-bind:class="monitor.status = 2 ? off : on ">
+        <!-- <div v-bind:class="monitor.status = 2 ? off : on "> -->
           <div class="name">
               <span>{{ monitor.friendly_name }}</span>
             </div>
             <div class="url">
               <a v-bind:href="monitor.url">{{ monitor.url }}</a>
             </div>
-            <!-- <div class="status">
+            <div class="status">
               <span>{{ status(monitor.status) }}</span>
-            </div> -->
+            </div>
+            <!-- </div> -->
         </div>
-      </div>
     <p>{{ error }}</p>
   </div>
 </template>
@@ -88,6 +88,7 @@ h1 {
 }
 
 .name, .url, .status {
+  width: calc(100% / 3 - 25px);
   padding-right: 25px;
 }
 
