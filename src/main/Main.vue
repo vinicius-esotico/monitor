@@ -1,9 +1,10 @@
 <template>
   <div class="main">
-    <!-- <Monitor 
+    
+    <Monitor 
     apiKey="ur1615701-d183bc4f26c1d1195e6b0340"
     title="Monitor Esotico.com.br"
-    /> -->
+    />
     <Monitor 
     apiKey="ur597133-126fa0e205446d3fc521a49f"
     title="Monitor King1"
