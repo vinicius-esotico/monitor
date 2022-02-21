@@ -50,31 +50,29 @@ export default {
   props: {
     apiKey: {type: String},
     title: {type: String},
-  },data: function () {
-    return {
-      status: null,
-      isUp: null,
-      sites: [],
-      error: '',
-      off: 'off',
-      on: 'on',
-      cont: null,
-      getMonitors: null,
-      copia: null,
-        headers: { 
-          'cache-control': 'no-cache',
-          'content-type': 'application/x-www-form-urlencoded' 
+  },
+  data: function () {
+        return {
+          isUp: null,
+          sites: [],
+          error: '',
+          off: 'off',
+          on: 'on',
+            headers: { 
+              'cache-control': 'no-cache',
+              'content-type': 'application/x-www-form-urlencoded' 
+            }
         }
-    }
-},mounted() {
-     this.getMonitors = function() { axios.post(`https://api.uptimerobot.com/v2/getMonitors?api_key=${this.apiKey}`, this.headers)
+},
+methods:{
+          getMonitors: function() { axios.post(`https://api.uptimerobot.com/v2/getMonitors?api_key=${this.apiKey}`, this.headers)
           .then(resp => {
             [...this.sites] = resp.data.monitors
           }).catch(error => {
             this.error = error
           })
-     }
-          this.status = function(i) {
+          },
+          status: function(i) {
             switch(i) {
               case 0:
                 return 'paused'
@@ -87,42 +85,36 @@ export default {
               case 9:
                 return 'down'
             }
+          },
+          cont: function(paran) {
+
+            let cont = 0
+            
+            if(paran == 'on') {
+              this.sites.forEach(site => {
+                if (site.status === 2) {
+                    cont++  
+                }
+              })
+            }else if(paran == 'off') {
+              this.sites.forEach(site => {
+                if (site.status === 9) {
+                    cont++  
+                }
+              })
+            }
+
+            return cont
+          },
+          copia: function(site) {
+            let txt = site
+            return navigator.clipboard.writeText(txt);
           }
-    
-
-    this.cont = function(paran) {
-
-      let cont = 0
-      
-      if(paran == 'on') {
-        this.sites.forEach(site => {
-          if (site.status === 2) {
-              cont++  
-          }
-        })
-      }else if(paran == 'off') {
-        this.sites.forEach(site => {
-          if (site.status === 9) {
-              cont++  
-          }
-        })
-      }
-
-      return cont
-    }
-
-
-
-    this.copia = function(site) {
-      let txt = site
-      return navigator.clipboard.writeText(txt);
-    }
-
-
+},
+mounted() {
     // setInterval(() => {
        this.getMonitors()  
     // }, 30000) // 5 minutos em milisegundos = 30000
-      
   }
 }
 </script>
