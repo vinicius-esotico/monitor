@@ -41,7 +41,6 @@
     apiKey="ur599546-06c22d065622c36e96ba7ebf"
     title="Monitor QuikHost"
     />
-    
     <Monitor 
     apiKey="ur599107-b8debd91916942e16b59d3f1"
     title="Monitor HostMach"
@@ -65,6 +64,10 @@
     <Monitor 
     apiKey="ur599112-15c0bd1d8826710fd6634166"
     title="Monitor Godaddy"
+    />
+    <Monitor 
+    apiKey="ur593720-0abb748187dc13b5b29372c3"
+    title="Monitor LocaWeb2"
     />
     
   </div>

@@ -2,7 +2,7 @@
   <div class="monitor">
     <div class="titulo">
     <h1>{{ title }}</h1>
-    <b-button v-b-toggle="apiKey" variant="primary">Mostrar Monitores</b-button>
+    <b-button v-b-toggle="apiKey" variant="primary">Mostrar Monitor</b-button>
     <div class="cont">
     <div class="cont-on"> On: {{ cont('on') }} </div>
     <div class="cont-off"> Off: {{ cont('off') }} </div>
