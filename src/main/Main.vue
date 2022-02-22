@@ -30,6 +30,10 @@
     title="Monitor HostHP"
     />
     <Monitor 
+    apiKey="ur598374-9aa65b4f046abf48589498bb"
+    title="Monitor HostHP2"
+    />
+    <Monitor 
     apiKey="ur588820-7b3484248e15322376877b43"
     title="Monitor UolHost"
     />
@@ -55,6 +59,10 @@
     />
     <Monitor 
     apiKey="ur590123-3ad01acfb4d40ff1ce2819e7"
+    title="Monitor HostGator"
+    />
+    <Monitor 
+    apiKey="ur590606-b827c8f9531874604eb32e2f"
     title="Monitor HostGator2"
     />
     <Monitor 

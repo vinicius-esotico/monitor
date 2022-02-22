@@ -30,12 +30,11 @@
                 v-on:click="copia(monitor.url)"> 
                 <i class="fa-regular fa-copy"></i> 
               </button>
-              
+            </div>
             </div>
             <!-- <div class="status">
               <span>{{ status(monitor.status) }}</span>
             </div> -->
-            </div>
         </div>
     </b-collapse>
     <p>{{ error }}</p>
@@ -115,7 +114,8 @@ mounted() {
     // setInterval(() => {
        this.getMonitors()  
     // }, 30000) // 5 minutos em milisegundos = 30000
-  }
+  },
+  
 }
 </script>
 
@@ -149,6 +149,11 @@ h1 {
 
 .url a {
   color: #f1f1f1;
+}
+
+.url a:hover {
+  color: currentColor;
+  text-decoration: none;
 }
 
 .off {
