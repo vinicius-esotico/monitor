@@ -1,8 +1,8 @@
 <template>
 <div class="monitor-row">
-  <div class="loop" v-for="monitor in up" 
+  <div class="loop" v-for="monitor in down" 
         :key="monitor.id" > 
-        <div class="on">
+        <div class="off">
         <span class="nome">{{ monitor.friendly_name }}</span>
           <a  
             target="_blank" 
@@ -25,11 +25,11 @@
 
 export default {
     props: {
-      sites: {type: Array},
+      down: {type: Array},
     },
     data() {
       return {
-      down: null
+
       }
     },
     methods: {
@@ -37,17 +37,15 @@ export default {
         let txt = site
         return navigator.clipboard.writeText(txt);
       },
-      filtroDown: function(obj) {
-        return obj.status === 9
-      },
+      
     },
     mounted() {
-      [...this.down] = this.sites.filter(this.filtroDown)
+
     },
 }
 </script>
 
-<style>
+<style scoped>
 
 .loop, .on, .off {
    padding: 10px;

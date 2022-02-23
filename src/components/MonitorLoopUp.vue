@@ -25,11 +25,11 @@
 
 export default {
     props: {
-      sites: {type: Array},
+      up: {type: Array},
     },
     data() {
       return {
-      up: null,
+
       }
     },
     methods: {
@@ -37,17 +37,14 @@ export default {
         let txt = site
         return navigator.clipboard.writeText(txt);
       },
-      filtroUp: function(obj) {
-        return obj.status === 2
-      },
+      
     },
     mounted() {
-      [...this.up] = this.sites.filter(this.filtroUp)
     },
 }
 </script>
 
-<style>
+<style scoped>
 
 .loop, .on, .off {
    padding: 10px;

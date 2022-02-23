@@ -5,11 +5,11 @@
     apiKey="ur1615701-d183bc4f26c1d1195e6b0340"
     title="Monitor Esotico.com.br"
     />
-   <!-- <Monitor 
+   <Monitor 
     apiKey="ur597133-126fa0e205446d3fc521a49f"
     title="Monitor King1"
-    /> -->
-    <!--  <Monitor 
+    /> 
+    <Monitor 
     apiKey="ur598631-116bbf14d22b86b9f8438f4a"
     title="Monitor King2"
     />
@@ -76,7 +76,7 @@
     <Monitor 
     apiKey="ur593720-0abb748187dc13b5b29372c3"
     title="Monitor LocaWeb2"
-    /> -->
+    />
     
   </div>
 </template>
@@ -92,7 +92,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .main {
   display: flex;
   justify-content: center;

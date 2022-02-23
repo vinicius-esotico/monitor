@@ -2,6 +2,7 @@
   <div class="monitor">
     <div class="titulo">
     <h1>{{ title }}</h1>
+
     <b-button v-b-toggle="apiKey" variant="primary">Mostrar Monitor</b-button>
     <div class="cont">
       <div class="cont-on"> On: {{ cont('on') }} </div>
@@ -9,10 +10,10 @@
     </div>
     <b-collapse v-bind:id="apiKey" class="mt-2">
       <MonitorLoopDown
-        :sites="sites"
+        :down="sites.filter(this.filtroDown)"
       />
       <MonitorLoopUp
-        :sites="sites"
+        :up="sites.filter(this.filtroUp)"
       />
     </b-collapse>
     <p>{{ error }}</p>
@@ -38,7 +39,6 @@ export default {
   },
   data: function () {
         return {
-          isUp: null,
           sites: [],
           error: '',
           off: 'off',
@@ -78,22 +78,29 @@ methods:{
 
             return cont
           },
+          filtroDown: function(obj) {
+            return obj.status == 9
+          },
+          filtroUp: function(obj) {
+            return obj.status == 2
+          },
 },
 mounted() {
-       this.getMonitors()  
+       this.getMonitors()
   },
   updated() {
     // setInterval(() => {
     //    this.getMonitors()  
     // }, 30000) // 5 minutos em milisegundos = 30000
+   
   }
   
 }
 </script>
 
-<style>
+<style scoped>
 h1 {
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 10px;
 }
 
