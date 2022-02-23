@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .loop, .on, .off {
    padding: 10px;

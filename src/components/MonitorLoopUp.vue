@@ -44,39 +44,6 @@ export default {
 }
 </script>
 
-<style scoped>
-
-.loop, .on, .off {
-   padding: 10px;
-  color: #f1f1f1;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.off {
-  background-color: red;
-}
-
-.on {
-  background-color: #065c06;
-}
-
-.link {
-  color: #f1f1f1;
-}
-.link:hover {
-  color: currentColor;
-  text-decoration: none;
-}
-
-.btn-copia {
-  padding: 8px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
+<style>
 
 </style>

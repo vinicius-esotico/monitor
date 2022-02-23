@@ -2,11 +2,11 @@
   <div class="monitor">
     <div class="titulo">
     <h1>{{ title }}</h1>
-
-    <b-button v-b-toggle="apiKey" variant="primary">Mostrar Monitor</b-button>
+    </div>
+    <b-button class="btn" v-b-toggle="apiKey" variant="primary">Mostrar Monitor</b-button>
     <div class="cont">
+      <div v-if="cont('off') != 0" class="cont-off"> Off: {{ cont('off') }} </div>
       <div class="cont-on"> On: {{ cont('on') }} </div>
-      <div class="cont-off"> Off: {{ cont('off') }} </div>
     </div>
     <b-collapse v-bind:id="apiKey" class="mt-2">
       <MonitorLoopDown
@@ -17,7 +17,6 @@
       />
     </b-collapse>
     <p>{{ error }}</p>
-</div>
 </div>
 </template>
 
@@ -82,7 +81,7 @@ methods:{
             return obj.status == 9
           },
           filtroUp: function(obj) {
-            return obj.status == 2
+            return obj.status !== 9
           },
 },
 mounted() {
@@ -105,11 +104,19 @@ h1 {
 }
 
 .monitor {
+  display: flex;
+  box-sizing: border-box;
   width: 100%;
-  height: fit-content;
+  justify-content: space-around;
+  vertical-align: middle;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
-
+.btn {
+  widows: fit-content;
+  height: fit-content;
+}
 
 .cont-on, .cont-off {
   font-size: 24px;
